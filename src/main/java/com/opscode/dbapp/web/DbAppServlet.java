@@ -62,7 +62,7 @@ public class DbAppServlet extends HttpServlet {
       Context envContext  = (Context)initContext.lookup("java:/comp/env");
       String appEnvironment = (String) envContext.lookup("appEnvironment");
       logger.log(Level.INFO, "application running in the '" + appEnvironment + "' environment!");
-      DataSource dataSource = (DataSource) envContext.lookup("jdbc/dbapp_"+appEnvironment);
+      DataSource dataSource = (DataSource) envContext.lookup("jdbc/dbapp");
       connection = dataSource.getConnection();
     } catch (Exception e) {
       logger.log(Level.SEVERE, "error retrieving db connection", e);
